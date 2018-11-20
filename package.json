@@ -1,0 +1,29 @@
+{
+  "name": "dev-lender-api",
+  "version": "1.0.0",
+  "description": "API for the dev lender APP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaSiya/dev-lender-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaSiya/dev-lender-api/issues"
+  },
+  "homepage": "https://github.com/TaSiya/dev-lender-api#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pg": "^7.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "mocha": "^5.2.0"
+  }
+}
