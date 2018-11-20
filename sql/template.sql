@@ -12,3 +12,4 @@ create table info(
     dev_id int not null,
     lender_id int not null
 );
+
