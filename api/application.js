@@ -14,7 +14,21 @@ module.exports = (services)=>{
         }
     }
 
+    async function namePost(req, res, next){
+        try{
+            let name = req.params.username;
+            await services.insertUser(name);
+            res.json({
+                status: 'success',
+            })
+        } catch(err) {
+            res.json({
+                status : err.stack
+            })
+        }
+    }
     return {
-        allUsers
+        allUsers,
+        namePost
     }
 }
