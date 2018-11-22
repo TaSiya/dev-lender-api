@@ -14,6 +14,7 @@ create table details(
     email text not null,
     bio text not null,
     address text not null,
+    rating int not null,
     contact text not null,
     position text not null,
     
@@ -24,6 +25,7 @@ alter SEQUENCE details_id_seq RESTART 1;
 create table monies(
     id serial primary key not null,
     loan int not null,
+    loaned int not null,
     deposit int not null,
     capital int not null,
     amount_left int not null,
