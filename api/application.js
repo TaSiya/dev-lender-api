@@ -27,8 +27,23 @@ module.exports = (services)=>{
             })
         }
     }
+    async function combiningRoute(req, res, next){
+        try{
+            let allData = await services.combinedData();
+
+            res.json({
+                status: 'success',
+                allData
+            })
+        } catch(err) {
+            res.json({
+                status : err.stack
+            })
+        }
+    }
     return {
         allUsers,
+        combiningRoute,
         namePost
     }
 }
