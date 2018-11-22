@@ -52,13 +52,26 @@ module.exports = (services)=>{
         try{
             let user = 'Phindie'
             const axios = require('axios')
+            
             axios.get('https://api.github.com/users/'+user).then( response =>{
                 let data = response.data;
+                console.log(data);
                 let username = data.login;
-                console.log(username);
+                let picture = data.avatar_url;
+                let home = data.html_url;
+                let followers = data.followers_url
                 
-                
-                
+                res.json({
+                    status : 'success',
+                    data : [
+                        {
+                            username,
+                            picture,
+                            home,
+                            followers
+                        }
+                    ]
+                })
             })
         } catch(err) {
             res.json({
