@@ -1,5 +1,12 @@
 
 module.exports = (services)=>{
+    async function apiLinks(req,res){
+        try{
+            res.send('/api/users .... /api/usersData ... /api/github ... ')
+        } catch(err) {
+
+        }
+    }
     async function allUsers(req, res, next) {
         try{
             let users = await services.allUsers();
@@ -41,9 +48,30 @@ module.exports = (services)=>{
             })
         }
     }
+    async function getGigHub(req, res){
+        try{
+            let user = 'Phindie'
+            const axios = require('axios')
+            axios.get('https://api.github.com/users/'+user).then( response =>{
+                let data = response.data;
+                let username = data.login;
+                console.log(username);
+                
+                
+                
+            })
+        } catch(err) {
+            res.json({
+                status : "failed",
+                message : err.stack
+            })
+        }
+    }
     return {
+        apiLinks,
         allUsers,
         combiningRoute,
-        namePost
+        namePost,
+        getGigHub
     }
 }
