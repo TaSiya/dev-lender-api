@@ -55,6 +55,8 @@ var app = new Vue({
           this.userData = data.allData
       });
 
+      
+
       axios.get('/api/').then(function(res) {}).catch(function(err) {});
       axios.post('/api/', {name : 'bob'}).then(function(res) {  }).catch(function(err) {});
     }
