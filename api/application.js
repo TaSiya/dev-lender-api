@@ -52,20 +52,23 @@ module.exports = (services)=>{
         try{
             const axios = require('axios')
             let user ;
-            let data = [];
+            let dataa = [];
             let allUsers = await services.allUsers();
             for(let i = 0 ; i < allUsers.length ; i++){
                 user = allUsers[i].name;
                 let userData = await services.selectCombined(user);
-                console.log(userData,' wouhfuiaheifhqiueahfhasufhueqhafuheuih');
-                
                 axios.get('https://api.github.com/users/'+user).then( response =>{
-                    data = response.data;
-                    console.log(data);
-                    let username = data.login;
-                    let picture = data.avatar_url;
-                    let home = data.html_url;
-                    let followers = data.followers_url
+                    let dataResponse = response.data;
+                    // console.log(dataResponse);
+                    
+                    dataa.push({
+                        username : dataResponse.login,
+                        picture : dataResponse.avatar_url,
+                        home : dataResponse.html_url,
+                        followers : dataResponse.followers_url,
+
+                    });
+                    console.log(dataa);
                     
                     
                 });
@@ -73,14 +76,7 @@ module.exports = (services)=>{
 
             res.json({
                 status : 'success',
-                data : [
-                    {
-                        username,
-                        picture,
-                        home,
-                        followers
-                    }
-                ]
+                response : dataa
             })
         } catch(err) {
             res.json({

@@ -84,16 +84,13 @@
                     <div class="col-12 text-center">
                         <h2 class="mb-5 mt-5">Why Us ?</h2>
                         <div class="row ml-5">
-                            <div class="col-md-5 bg-secondary text-white mr-3">
+                            <div class="col-md-5 text-dark mr-3">
                                 <h3><strong>96.9% repayment rate</strong> </h3>
                                 <p>It's a loan not a donation;so when you're repaid you can use the money again.</p>
                             </div>
                             <div class="col-md-5 bg-light text-dark ml-3">
                                 <h3 class="text-info"><strong>R10 Million in loans</strong> </h3>
                                 <p>It's a loan not a donation;so when you're repaid you can use the money again.</p>
-                            </div>
-                            <div class="col-md-4 bg-light text-dark mt-3 mr-3">
-                                <h3 class="text-info"><strong>82 countries</strong> </h3>
                             </div>
                         </div>
 
@@ -106,13 +103,12 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-3 mr-4 ml-5">
+                    <div class="col-md-3 mr-3" v-for="item in userData">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="./img/l1.jpeg" alt="Card image cap">
+                            <img class="card-img-top" src="./img/{{item.name}}.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Sizwe M</h5>
-                                <h5>Cape Town, South Africa</h5>
-                                <p class="card-text">We will put a short description about the person here</p>
+                                <h5 class="card-title">{{item.name}}</h5>
+                                <p class="card-text">{{item.bio}}</p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Total loaned : R 10 000</li>
@@ -120,11 +116,10 @@
                                 <li class="list-group-item">Rating : 4/5</li>
                             </ul>
                             <div class="card-body">
-                                <a href="#" class="card-link">Request Funds</a>
+                                <a href="#" class="card-link">Request Loan</a>
                                 <a href="#" class="card-link">View Profile</a>
                             </div>
                         </div>
-
                     </div>
                     
                 </div>
