@@ -1,23 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Hello, world!</title>
 </head>
+
 <body>
     <div class="app">
-        {{message}}
-        <div v-if="showA">
-            AA
+        <div class="row navbar">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-brand btn btn-light"  v-on:click="homePage">Logo</button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <button class="nav-link btn btn-light"  v-on:click="homePage">Home <span class="sr-only">(current)</span></button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link btn btn-light"  v-on:click="developerPage">Developers</button>
+                            </li>
+                            <li class="nav-item">
+                                    <button class="nav-link btn btn-light"  v-on:click="lendersPage">Lenders</button>
+                            </li>
+                            
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <div v-if="showB">
-            BB
+        <div class="w-100"></div>
+        
+        <div v-if="home">
+            <div class="row">
+                <div class="col showcasing">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide bg-success" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <!-- <img class="d-block w-100" src="./img/profile1.jpg" alt="First slide"> -->
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First person</h5>
+                                <p>...</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <!-- <img class="d-block w-100 " src="./img/profile2.jpg" alt="Second slide"> -->
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>...</h5>
+                                <p>...</p>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                            <!-- <img class="d-block w-100" src="./img/profile3.jpg" alt="Third slide"> -->
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>...</h5>
+                                <p>...</p>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
         </div>
-    </div>    
+        
+        <div v-if="developer">
+            <h3>Developer</h3>
+        </div>
+        <div v-if="lender">
+            <h3>Lender</h3>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
-<script src="app.js"></script>
+
 </html>
