@@ -13,9 +13,8 @@ module.exports = pool =>{
     }
     async function combinedData(){
         await getGithubData('tasiya');
-        let result = await pool.query(`select name, age, email, bio, address, contact, loan, deposit, capital, amount_left, position from users 
-        join details on users.id = details.name_id
-        join monies on details.id = monies.user_id`);
+        let result = await pool.query(`select name, age, email, bio, address, contact,position from users 
+        join details on users.id = details.name_id;`);
         return result.rows;
     }
     async function projects(){

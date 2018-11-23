@@ -43,18 +43,15 @@ var app = new Vue({
         this.lender = false;
         this.profileDev = false;
         this.profileLender = true;
-      },
+      }
       // **********************************************************
       
-    } 
-    // mounted : function() {
-    //   var self = this;
-    //   setTimeout(function() {
-    //     self.showA = false;
-    //     self.showB = true;
-    //   }, 3000);
+    },
+    mounted : function() {
+      var self = this;
+      axios.get('https://dev-lender.herokuapp.com/api/usersData')
 
-      // axios.get('/api/').then(function(res) {}).catch(function(err) {});
-      // axios.post('/api/', {name : 'bob'}).then(function(res) {  }).catch(function(err) {});
-    // }
+      axios.get('/api/').then(function(res) {}).catch(function(err) {});
+      axios.post('/api/', {name : 'bob'}).then(function(res) {  }).catch(function(err) {});
+    }
   })
