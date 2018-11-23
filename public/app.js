@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '.app',
     data: {
+      userData : [],
       message: 'Hello Vue!',
       home : true,
       developer : false,
@@ -49,7 +50,10 @@ var app = new Vue({
     },
     mounted : function() {
       var self = this;
-      axios.get('https://dev-lender.herokuapp.com/api/usersData')
+      axios.get('https://dev-lender.herokuapp.com/api/usersData').then(response =>{
+          let data = response.data;
+          this.userData = data.allData
+      });
 
       axios.get('/api/').then(function(res) {}).catch(function(err) {});
       axios.post('/api/', {name : 'bob'}).then(function(res) {  }).catch(function(err) {});

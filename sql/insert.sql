@@ -31,6 +31,11 @@ insert into details
 values
 (24,1234,'siya@gmail.com','bio goes here','M19 Bonkolo Drive',0635163949,'lender', 4,1,2,6,'https://github.com/TaSiya/dev-lender-api');
 
+insert into details 
+( age, passwords, email, bio, address, contact, position, rating, name_id,category_id,type_id,repo_link) 
+values
+(24,1234,'siya@gmail.com','bio goes here','M19 Bonkolo Drive',0635163949,'lender', 4,2,2,6,'https://github.com/TaSiya/dev-lender-api');
+
 -- insert into details 
 -- ( age, passwords, email, bio, address, contact, position, rating, name_id) 
 -- values 

@@ -12,9 +12,14 @@ module.exports = pool =>{
         console.log('Siyandaaaaaaa');
     }
     async function combinedData(){
-        await getGithubData('tasiya');
+        // await getGithubData('tasiya');
         let result = await pool.query(`select name, age, email, bio, address, contact,position from users 
         join details on users.id = details.name_id;`);
+        return result.rows;
+    }
+    async function selectCombined(name){
+        let result = await pool.query(`select name, age, email, bio, address, contact,position from users 
+        join details on users.id = details.name_id where name = $1`, [name]);
         return result.rows;
     }
     async function projects(){
@@ -25,6 +30,7 @@ module.exports = pool =>{
         allUsers,
         combinedData,
         insertUser,
+        selectCombined,
         projects
     }
 }

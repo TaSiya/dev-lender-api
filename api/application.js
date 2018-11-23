@@ -50,28 +50,37 @@ module.exports = (services)=>{
     }
     async function getGigHub(req, res){
         try{
-            let user = 'Phindie'
             const axios = require('axios')
-            
-            axios.get('https://api.github.com/users/'+user).then( response =>{
-                let data = response.data;
-                console.log(data);
-                let username = data.login;
-                let picture = data.avatar_url;
-                let home = data.html_url;
-                let followers = data.followers_url
+            let user ;
+            let data = [];
+            let allUsers = await services.allUsers();
+            for(let i = 0 ; i < allUsers.length ; i++){
+                user = allUsers[i].name;
+                let userData = await services.selectCombined(user);
+                console.log(userData,' wouhfuiaheifhqiueahfhasufhueqhafuheuih');
                 
-                res.json({
-                    status : 'success',
-                    data : [
-                        {
-                            username,
-                            picture,
-                            home,
-                            followers
-                        }
-                    ]
-                })
+                axios.get('https://api.github.com/users/'+user).then( response =>{
+                    data = response.data;
+                    console.log(data);
+                    let username = data.login;
+                    let picture = data.avatar_url;
+                    let home = data.html_url;
+                    let followers = data.followers_url
+                    
+                    
+                });
+            }
+
+            res.json({
+                status : 'success',
+                data : [
+                    {
+                        username,
+                        picture,
+                        home,
+                        followers
+                    }
+                ]
             })
         } catch(err) {
             res.json({
