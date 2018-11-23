@@ -8,7 +8,7 @@ module.exports = function () {
         useSSL = true;
     }
     // which db connection to use
-    const connectionString = process.env.DATABASE_URL || 'postgresql://tasiya:pg123@localhost:5432/lenderdb';
+    const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/lenderdb';
 
     const pool = new Pool({
         connectionString,
