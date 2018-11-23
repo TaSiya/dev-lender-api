@@ -37,6 +37,7 @@ create table details(
     address text not null,
     rating int not null,
     contact text not null,
+    repo_link text not null,
     position text not null,
     followers int,
     type text ,
