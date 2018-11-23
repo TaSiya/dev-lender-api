@@ -1,10 +1,11 @@
-DROP TABLE categories, types, users, details, monies, project;
+DROP TABLE IF EXISTS categories, types, users, details, monies, project;
 
 create table users(
     id serial primary key not null,
     name text not null
 );
 alter SEQUENCE users_id_seq RESTART 1;
+
 create table categories(
     id serial primary key not null,
     category text not null
@@ -39,9 +40,12 @@ create table details(
     contact text not null,
     repo_link text not null,
     position text not null,
-    followers int,
-    type text ,
-    FOREIGN key (name_id) references users(id)
+    category_id int not null,
+    type_id int not null,
+    FOREIGN key (name_id) references users(id),
+    FOREIGN key (category_id) references categories(id),
+    FOREIGN key (type_id) references types(id)
+
 );
 alter SEQUENCE details_id_seq RESTART 1;
 
@@ -52,8 +56,8 @@ create table monies(
     deposit int not null,
     capital int not null,
     amount_left int not null,
-    detail_id int not null,
-    FOREIGN key (detail_id) references details(id)
+    user_id int not null,
+    FOREIGN key (user_id) references users(id)
 );
 
-\i sql/insert.sql 
+-- \i sql/insert.sql 

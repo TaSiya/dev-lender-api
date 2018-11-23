@@ -21,21 +21,15 @@ insert into types (project_type) values ('Application Suites');
 insert into types (project_type) values ('Software for Engineering and Product Development');
 
 
+insert into users (name) values ('Siyanda');
+insert into users (name) values ('Anitha');
+insert into users (name) values ('Monde');
+insert into users (name) values ('Phindi');
 
-
-
-
-
-
--- insert into users (name) values ('Siyanda');
--- insert into users (name) values ('Anitha');
--- insert into users (name) values ('Monde');
--- insert into users (name) values ('Phindi');
-
--- insert into details 
--- ( age, passwords, email, bio, address, contact, position, rating, name_id) 
--- values
--- (24,1234,'siya@gmail.com','bio goes here','M19 Bonkolo Drive',0635163949,'lender', 4,1);
+insert into details 
+( age, passwords, email, bio, address, contact, position, rating, name_id,category_id,type_id,repo_link) 
+values
+(24,1234,'siya@gmail.com','bio goes here','M19 Bonkolo Drive',0635163949,'lender', 4,1,2,6,'https://github.com/TaSiya/dev-lender-api');
 
 -- insert into details 
 -- ( age, passwords, email, bio, address, contact, position, rating, name_id) 
